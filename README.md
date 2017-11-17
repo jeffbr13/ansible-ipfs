@@ -1,7 +1,7 @@
 jeffbr13.ipfs
 =============
 
-Installs and configures the `go-ipfs` daemon with automatic forward-migration.
+Installs and configures the [`go-ipfs`](https://github.com/ipfs/go-ipfs) daemon with automatic forward-migration.
 
 Unique node IDs and private keys must be configured per-host.
 
