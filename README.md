@@ -9,7 +9,7 @@ Unique node IDs and private keys must be configured per-host.
 Requirements
 ------------
 
-- Ansible
+- Ansible 2.2 (for service.use option)
 
 
 Role Variables
