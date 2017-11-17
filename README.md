@@ -30,8 +30,8 @@ The following variables can also be set across the playbook:
 ipfs_dist_url: https://dist.ipfs.io
 ipfs_version: v0.4.11
 ipfs_arch: amd64
-ipfs_api_interface_address: /ip4/127.0.0.1/tcp/5001
-ipfs_api_gateway_address: /ip4/127.0.0.1/tcp/8080
+ipfs_http_api_listen_multiaddress: /ip4/127.0.0.1/tcp/5001
+ipfs_http_gateway_listen_multiaddress: /ip4/127.0.0.1/tcp/8080
 ipfs_storage_max: 10GB
 ```
 
@@ -47,7 +47,7 @@ Example Playbook
 
 - hosts: ipfs_nodes
   roles:
-     - { role: jeffbr13.ipfs, ipfs_arch: arm, ipfs_api_gateway_address: /ip4/0.0.0.0/tcp/5001, ipfs_storage_max: 50GB}
+     - { role: jeffbr13.ipfs, ipfs_arch: arm, ipfs_http_api_listen_multiaddress: /ip4/0.0.0.0/tcp/5001, ipfs_storage_max: 50GB}
 ```
 
 ```yaml

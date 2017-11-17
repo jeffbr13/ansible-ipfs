@@ -3,8 +3,8 @@
     "HTTPHeaders": null
   },
   "Addresses": {
-    "API": "{{ ipfs_api_interface_address }}",
-    "Gateway": "{{ ipfs_api_gateway_address }}",
+    "API": "{{ ipfs_http_api_listen_multiaddress }}",
+    "Gateway": "{{ ipfs_http_gateway_listen_multiaddress }}",
     "Swarm": [
       "/ip4/0.0.0.0/tcp/4001",
       "/ip6/::/tcp/4001"
