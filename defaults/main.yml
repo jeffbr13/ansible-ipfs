@@ -1,0 +1,7 @@
+---
+ipfs_dist_url: https://dist.ipfs.io
+ipfs_version: v0.4.11
+ipfs_arch: amd64
+ipfs_api_interface_address: /ip4/127.0.0.1/tcp/5001
+ipfs_api_gateway_address: /ip4/127.0.0.1/tcp/8080
+ipfs_storage_max: 10GB

@@ -1,0 +1,18 @@
+galaxy_info:
+  author: Ben Jeffrey
+  description: InterPlanetary File System
+  license: MIT
+  min_ansible_version: 1.2
+  platforms:
+    - name: Ubuntu
+      versions:
+        - 16.04
+
+  galaxy_tags:
+    - ipfs
+    - daemon
+    - networking
+    - distributed
+    - p2p
+    - file
+    - system
