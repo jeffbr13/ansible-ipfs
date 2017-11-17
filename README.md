@@ -16,22 +16,27 @@ Role Variables
 --------------
 
 The IPFS peer ID and private key must be for each host in `host_vars`.
-   
-- `ipfs_peer_id`
-- `ipfs_private_key` 
 
-You can produce valid values by running `ipfs-key | base64 -w 0` (see [whyrusleeping/ipfs-key][]).
+```yaml
+ipfs_peer_id: ""      # see below
+ipfs_private_key: ""  # ipfs-key | base64
+```
+
+You can produce valid values for `ipfs_peer_id` and `ipfs_private_key` by running `ipfs-key | base64 -w 0` (see [whyrusleeping/ipfs-key][]).
 
 The following variables can also be set across the playbook:
 
-- `ipfs_dist_url`: defaults to `https://dist.ipfs.io`.
-- `ipfs_version`: go-ipfs version number
-- `ipfs_arch`: defaults to `amd64`.
-- `ipfs_api_interface_address`: to expose the HTTP control API on, as an [IPFS `multiaddr`][multiaddr]. Defaults to `/ip4/127.0.0.1/tcp/5001`. 
-- `ipfs_api_gateway_address`: to expose the HTTP Gateway on, as an [IPFS `multiaddr`][multiaddr]. Defaults to `/ip4/127.0.0.1/tcp/8080`
-- `ipfs_storage_max`: defaults to `10GB`
+```yaml
+ipfs_dist_url: https://dist.ipfs.io
+ipfs_version: v0.4.11
+ipfs_arch: amd64
+ipfs_api_interface_address: /ip4/127.0.0.1/tcp/5001
+ipfs_api_gateway_address: /ip4/127.0.0.1/tcp/8080
+ipfs_storage_max: 10GB
+```
 
-Remember to also configure your firewall if your exposing the HTTP API or Gateway services.
+The HTTP control API and Gateway addresses are both configured as an [IPFS `multiaddr`][multiaddr].
+Remember to also configure your firewall if you're exposing them.
 
 
 Example Playbook
@@ -42,7 +47,7 @@ Example Playbook
 
 - hosts: ipfs_nodes
   roles:
-     - { role: jeffbr13.ipfs, ipfs_arch: arm, ipfs_api_gateway_address: /ip4/0.0.0.0/tcp/5001}
+     - { role: jeffbr13.ipfs, ipfs_arch: arm, ipfs_api_gateway_address: /ip4/0.0.0.0/tcp/5001, ipfs_storage_max: 50GB}
 ```
 
 ```yaml
