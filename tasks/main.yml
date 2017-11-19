@@ -25,6 +25,12 @@
     dest: /usr/local/bin/ipfs
     src: /opt/go-ipfs/{{ipfs_version}}/go-ipfs/ipfs
 
+- name: ensure systemd system services directory exists
+  become: yes
+  file:
+    path: /etc/systemd/system
+    state: directory
+
 - name: install ipfs init service
   become: yes
   copy:
